@@ -1,11 +1,18 @@
-# Define the path to your solution file
-$solutionPath = "C:\Path\To\YourSolution.sln"
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  
+  <appSettings>
+    <!-- Example App Setting -->
+    <add key="ExampleSetting" value="ExampleValue"/>
+  </appSettings>
+  
+  <connectionStrings>
+    <!-- Example Connection String -->
+    <add name="ExampleConnectionString" 
+         connectionString="Data Source=your_server_name;Initial Catalog=your_database_name;Integrated Security=True" 
+         providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  
+  <!-- Other configuration settings like system.web go here -->
 
-# Read the content of the .sln file and select lines that define a project
-$projectLines = Get-Content $solutionPath | Select-String '^Project\('
-
-# Extract project names from each line
-$projectNames = $projectLines -replace '^.+= "', '' -replace '" .+$', ''
-
-# Output the project names
-$projectNames
+</configuration>
