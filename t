@@ -1,24 +1,45 @@
-Imports System.Xml.Linq
+Imports System.Net.Http
+Imports System.Text
+Imports Newtonsoft.Json
 
-Module Module1
-    Sub Main()
-        ' Path to your web.config or app.config file
-        Dim configPath As String = "path_to_your_config_file_here"
+Private Async Function CallCFIMSAsync(SRef As String, SCmd As String, SInfo As String, SImage As String, SAFERegID As Integer) As Task(Of Integer)
+    ' Log the beginning of the operation
+    My.Application.Log.WriteEntry("Creating CFIMS REST API Client Endpoint", TraceEventType.Verbose, SAFERegID)
 
-        ' Load the configuration file
-        Dim config As XDocument = XDocument.Load(configPath)
+    ' Create an instance of HttpClient
+    Using client As New HttpClient()
 
-        ' Query the appSettings
-        Dim appSettings = config.Element("configuration").Element("appSettings").Elements("add")
+        ' Define the REST API endpoint URL
+        Dim apiUrl As String = "http://your_api_endpoint_here"
 
-        ' Retrieve a specific setting by key
-        Dim specificSetting = appSettings.FirstOrDefault(Function(e) e.Attribute("key").Value = "YourSettingKey")
+        ' Create the payload object
+        Dim payload As New With {Key .SRef = SRef, Key .SCmd = SCmd, Key .SInfo = SInfo, Key .SImage = SImage, Key .SAFERegID = SAFERegID}
 
-        If specificSetting IsNot Nothing Then
-            Dim settingValue As String = specificSetting.Attribute("value").Value
-            Console.WriteLine($"Value for YourSettingKey: {settingValue}")
-        Else
-            Console.WriteLine("Setting key not found.")
-        End If
-    End Sub
-End Module
+        ' Serialize the payload object to JSON
+        Dim json As String = JsonConvert.SerializeObject(payload)
+
+        ' Create the HttpContent for the request
+        Using content As New StringContent(json, Encoding.UTF8, "application/json")
+
+            ' Log transition to the next operation
+            My.Application.Log.WriteEntry("Sending data to CFIMS REST API", TraceEventType.Verbose, SAFERegID)
+
+            ' Send the POST request to the REST API endpoint
+            Dim response As HttpResponseMessage = Await client.PostAsync(apiUrl, content)
+
+            ' Ensure the request was successful
+            response.EnsureSuccessStatusCode()
+
+            ' Read the response content as a string
+            Dim responseContent As String = Await response.Content.ReadAsStringAsync()
+
+            ' Log the completion of the operation
+            My.Application.Log.WriteEntry($"CFIMS REST API call completed with response: {responseContent}", TraceEventType.Information, SAFERegID)
+
+            ' Deserialize the response content to an integer (or use it directly depending on your API response)
+            Dim retCode As Integer = JsonConvert.DeserializeObject(Of Integer)(responseContent)
+
+            Return retCode
+        End Using
+    End Using
+End Function
