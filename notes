@@ -1,0 +1,558 @@
+### **Phase 1: Foundation Building (Days 1-20)**
+
+#### **Week 1: Basic Loops and Arrays**
+
+- **Day 1 (Aug 25, Sun)**: 
+  - **Study**: Introduction to loops (for, while).
+  - **Practice**: Write loops that print numbers from 1 to 10.
+  - **Problems**: Print an array's elements using a loop.
+
+- **Day 2 (Aug 26, Mon)**:
+  - **Study**: Loop through arrays with different lengths.
+  - **Practice**: Manually trace simple loop iterations.
+  - **Problems**: Print the sum of all elements in an array.
+
+- **Day 3 (Aug 28, Wed)**:
+  - **Study**: Introduction to nested loops.
+  - **Practice**: Visualize loops with Python Tutor.
+  - **Problems**: Print all pairs in an array.
+
+- **Day 4 (Aug 29, Thu)**:
+  - **Study**: Continue with nested loops.
+  - **Practice**: Manually trace a simple 2x2 nested loop.
+  - **Problems**: Write a loop to print a 2D matrix.
+
+- **Day 5 (Aug 30, Fri)**:
+  - **Study**: Arrays and basic operations (insertion, deletion).
+  - **Practice**: Implement insertion in an array.
+  - **Problems**: Insert an element at a specific position in an array.
+
+- **Day 6 (Aug 31, Sat)**:
+  - **Study**: Understand array traversal and searching.
+  - **Practice**: Implement linear search.
+  - **Problems**: Find the largest element in an array.
+
+- **Day 7 (Sep 1, Sun)**:
+  - **Study**: Continue with array operations.
+  - **Practice**: Implement deletion from an array.
+  - **Problems**: Delete a specific element from an array.
+
+#### **Week 2: Strengthening Loops and Arrays**
+
+- **Day 8 (Sep 2, Mon)**:
+  - **Study**: More on nested loops with arrays.
+  - **Practice**: Visualize complex nested loops.
+  - **Problems**: Write code to print an array in reverse order.
+
+- **Day 9 (Sep 4, Wed)**:
+  - **Study**: Introduction to 2D arrays.
+  - **Practice**: Manually trace loops through 2D arrays.
+  - **Problems**: Sum all elements in a 2D array.
+
+- **Day 10 (Sep 5, Thu)**:
+  - **Study**: Continue 2D array operations.
+  - **Practice**: Write loops to access rows and columns.
+  - **Problems**: Transpose a 2D matrix.
+
+- **Day 11 (Sep 6, Fri)**:
+  - **Study**: Introduction to basic sorting algorithms (Bubble Sort).
+  - **Practice**: Implement and manually trace Bubble Sort.
+  - **Problems**: Sort an array using Bubble Sort.
+
+- **Day 12 (Sep 7, Sat)**:
+  - **Study**: Understanding time complexity basics.
+  - **Practice**: Analyze the time complexity of loops.
+  - **Problems**: Compare Bubble Sort and Selection Sort.
+
+- **Day 13 (Sep 8, Sun)**:
+  - **Study**: More on time complexity with nested loops.
+  - **Practice**: Analyze time complexity for nested loops.
+  - **Problems**: Optimize a nested loop operation.
+
+#### **Week 3: Sorting and Searching Basics**
+
+- **Day 14 (Sep 9, Mon)**:
+  - **Study**: Continue with sorting algorithms (Selection Sort).
+  - **Practice**: Implement Selection Sort.
+  - **Problems**: Sort an array using Selection Sort.
+
+- **Day 15 (Sep 11, Wed)**:
+  - **Study**: Introduction to Insertion Sort.
+  - **Practice**: Implement and manually trace Insertion Sort.
+  - **Problems**: Sort an array using Insertion Sort.
+
+- **Day 16 (Sep 12, Thu)**:
+  - **Study**: Introduction to searching algorithms (Linear Search).
+  - **Practice**: Implement Linear Search.
+  - **Problems**: Find an element in an unsorted array.
+
+- **Day 17 (Sep 13, Fri)**:
+  - **Study**: Continue with searching algorithms (Binary Search).
+  - **Practice**: Implement Binary Search.
+  - **Problems**: Find an element in a sorted array using Binary Search.
+
+- **Day 18 (Sep 14, Sat)**:
+  - **Study**: Binary Search on more complex data.
+  - **Practice**: Implement Binary Search with edge cases.
+  - **Problems**: Find the first occurrence of an element in a sorted array.
+
+- **Day 19 (Sep 15, Sun)**:
+  - **Study**: More on Binary Search variations.
+  - **Practice**: Solve Binary Search problems on arrays.
+  - **Problems**: Find the square root of a number using Binary Search.
+
+- **Day 20 (Sep 16, Mon)**:
+  - **Study**: Review sorting and searching algorithms.
+  - **Practice**: Solve mixed problems on sorting and searching.
+  - **Problems**: Sort and search in a 2D array.
+
+### **Phase 2: Core DSA Concepts (Days 21-60)**
+
+#### **Week 4: Introduction to Recursion**
+
+- **Day 21 (Sep 18, Wed)**:
+  - **Study**: Basics of recursion.
+  - **Practice**: Implement factorial using recursion.
+  - **Problems**: Solve the factorial problem with different input sizes.
+
+- **Day 22 (Sep 19, Thu)**:
+  - **Study**: Recursive problems with arrays.
+  - **Practice**: Implement recursive array sum.
+  - **Problems**: Find the sum of an array using recursion.
+
+- **Day 23 (Sep 20, Fri)**:
+  - **Study**: Introduction to Fibonacci sequence.
+  - **Practice**: Implement Fibonacci using recursion.
+  - **Problems**: Find the nth Fibonacci number.
+
+- **Day 24 (Sep 21, Sat)**:
+  - **Study**: Recursion and backtracking basics.
+  - **Practice**: Solve the "Tower of Hanoi" problem.
+  - **Problems**: Implement "Tower of Hanoi" for 3 disks.
+
+- **Day 25 (Sep 22, Sun)**:
+  - **Study**: Understanding recursion tree and memoization.
+  - **Practice**: Visualize recursion tree for Fibonacci.
+  - **Problems**: Implement Fibonacci with memoization.
+
+#### **Week 5: Advanced Sorting and Searching**
+
+- **Day 26 (Sep 23, Mon)**:
+  - **Study**: Introduction to Merge Sort.
+  - **Practice**: Implement and trace Merge Sort.
+  - **Problems**: Sort an array using Merge Sort.
+
+- **Day 27 (Sep 25, Wed)**:
+  - **Study**: Continue with Merge Sort and its analysis.
+  - **Practice**: Solve problems on Merge Sort.
+  - **Problems**: Sort a nearly sorted array using Merge Sort.
+
+- **Day 28 (Sep 26, Thu)**:
+  - **Study**: Introduction to Quick Sort.
+  - **Practice**: Implement and trace Quick Sort.
+  - **Problems**: Sort an array using Quick Sort.
+
+- **Day 29 (Sep 27, Fri)**:
+  - **Study**: Continue with Quick Sort analysis.
+  - **Practice**: Solve problems on Quick Sort.
+  - **Problems**: Partition an array using Quick Sort's partitioning scheme.
+
+- **Day 30 (Sep 28, Sat)**:
+  - **Study**: Advanced Binary Search techniques.
+  - **Practice**: Implement Binary Search on a rotated array.
+  - **Problems**: Find an element in a rotated sorted array.
+
+- **Day 31 (Sep 29, Sun)**:
+  - **Study**: Binary Search on more complex structures.
+  - **Practice**: Solve problems with Binary Search on 2D arrays.
+  - **Problems**: Find a peak element in a 2D array.
+
+#### **Week 6: Linked Lists Basics**
+
+- **Day 32 (Sep 30, Mon)**:
+  - **Study**: Introduction to singly linked lists.
+  - **Practice**: Implement basic linked list operations (insertion, deletion).
+  - **Problems**: Insert an element at the head and tail of a linked list.
+
+- **Day 33 (Oct 2, Wed)**:
+  - **Study**: Traversing linked lists with loops.
+  - **Practice**: Write code to traverse and print linked lists.
+  - **Problems**: Find the length of a linked list.
+
+- **Day 34 (Oct 3, Thu)**:
+  - **Study**: Understanding the concept of pointers in linked lists.
+  - **Practice**: Implement linked list traversal with pointers.
+  - **Problems**: Reverse a linked list.
+
+- **Day 35 (Oct 4, Fri)**:
+  - **Study**: Introduction to circular linked lists.
+  - **Practice**: Implement a circular linked list.
+  - **Problems**: Solve problems involving circular linked list traversal.
+
+Sorry about that! I'll continue from Day 36 and complete the rest of the 100-day plan.
+
+### **Phase 2: Core DSA Concepts (Continued)**
+
+#### **Week 6: Linked Lists Basics (Continued)**
+
+- **Day 36 (Oct 5, Sat)**:
+  - **Study**: Introduction to doubly linked lists.
+  - **Practice**: Implement basic operations (insertion, deletion) in a doubly linked list.
+  - **Problems**: Traverse a doubly linked list forwards and backwards.
+
+- **Day 37 (Oct 6, Sun)**:
+  - **Study**: Understanding and implementing more advanced linked list operations.
+  - **Practice**: Write code to detect and remove loops in linked lists.
+  - **Problems**: Detect a cycle in a linked list using Floyd’s Cycle-Finding Algorithm.
+
+#### **Week 7: Advanced Linked Lists**
+
+- **Day 38 (Oct 7, Mon)**:
+  - **Study**: Advanced linked list problems.
+  - **Practice**: Implement the intersection point of two linked lists.
+  - **Problems**: Find the intersection point of two linked lists.
+
+- **Day 39 (Oct 9, Wed)**:
+  - **Study**: Further linked list challenges.
+  - **Practice**: Merge two sorted linked lists.
+  - **Problems**: Implement the merging of two sorted linked lists.
+
+- **Day 40 (Oct 10, Thu)**:
+  - **Study**: Introduction to skip lists.
+  - **Practice**: Understand how skip lists work compared to linked lists.
+  - **Problems**: Implement basic insertion in a skip list.
+
+- **Day 41 (Oct 11, Fri)**:
+  - **Study**: Revision of linked lists and related problems.
+  - **Practice**: Re-solve the previous linked list problems.
+  - **Problems**: Reverse nodes in k-groups in a linked list.
+
+- **Day 42 (Oct 12, Sat)**:
+  - **Study**: Linked list practice day.
+  - **Practice**: Focus on solving complex linked list problems.
+  - **Problems**: Clone a linked list with next and random pointers.
+
+- **Day 43 (Oct 13, Sun)**:
+  - **Study**: Wrap up on linked lists.
+  - **Practice**: Solve additional problems from online platforms.
+  - **Problems**: Flatten a multilevel linked list.
+
+#### **Week 8: Stacks and Queues**
+
+- **Day 44 (Oct 14, Mon)**:
+  - **Study**: Introduction to stacks.
+  - **Practice**: Implement stack operations using arrays and linked lists.
+  - **Problems**: Check for balanced parentheses using stacks.
+
+- **Day 45 (Oct 16, Wed)**:
+  - **Study**: Introduction to queues.
+  - **Practice**: Implement queue operations using arrays and linked lists.
+  - **Problems**: Implement a queue using two stacks.
+
+- **Day 46 (Oct 17, Thu)**:
+  - **Study**: Advanced stack operations and problems.
+  - **Practice**: Solve stack-based problems like "next greater element."
+  - **Problems**: Implement the "next greater element" problem.
+
+- **Day 47 (Oct 18, Fri)**:
+  - **Study**: Advanced queue operations and problems.
+  - **Practice**: Solve queue-based problems like "sliding window maximum."
+  - **Problems**: Implement the "sliding window maximum" problem.
+
+- **Day 48 (Oct 19, Sat)**:
+  - **Study**: Introduction to priority queues (heaps).
+  - **Practice**: Implement a basic heap using an array.
+  - **Problems**: Implement heap operations like insert and delete.
+
+- **Day 49 (Oct 20, Sun)**:
+  - **Study**: Practice and revision of stacks and queues.
+  - **Practice**: Revisit complex problems involving stacks and queues.
+  - **Problems**: Solve "LRU Cache" problem using a queue and a hash map.
+
+#### **Week 9: Trees Basics**
+
+- **Day 50 (Oct 21, Mon)**:
+  - **Study**: Introduction to binary trees.
+  - **Practice**: Implement tree traversal methods (in-order, pre-order, post-order).
+  - **Problems**: Implement basic binary tree operations like insertion.
+
+- **Day 51 (Oct 23, Wed)**:
+  - **Study**: Understanding and implementing binary search trees (BST).
+  - **Practice**: Implement BST operations (insertion, search, deletion).
+  - **Problems**: Find the minimum and maximum elements in a BST.
+
+- **Day 52 (Oct 24, Thu)**:
+  - **Study**: Advanced tree traversal techniques (level-order traversal).
+  - **Practice**: Implement level-order traversal.
+  - **Problems**: Implement a function to print the level order of a binary tree.
+
+- **Day 53 (Oct 25, Fri)**:
+  - **Study**: Introduction to balanced trees (AVL trees).
+  - **Practice**: Implement basic operations in an AVL tree.
+  - **Problems**: Implement an AVL tree with insertion and balancing.
+
+- **Day 54 (Oct 26, Sat)**:
+  - **Study**: Introduction to heaps (min-heap and max-heap).
+  - **Practice**: Implement a heap and perform heap sort.
+  - **Problems**: Sort an array using heap sort.
+
+- **Day 55 (Oct 27, Sun)**:
+  - **Study**: Advanced binary tree problems.
+  - **Practice**: Implement a function to find the diameter of a binary tree.
+  - **Problems**: Find the diameter of a binary tree.
+
+#### **Week 10: Advanced Trees**
+
+- **Day 56 (Oct 28, Mon)**:
+  - **Study**: Introduction to segment trees.
+  - **Practice**: Implement basic segment tree operations (range sum query).
+  - **Problems**: Implement a segment tree for range sum queries.
+
+- **Day 57 (Oct 30, Wed)**:
+  - **Study**: Understanding and implementing trie data structures.
+  - **Practice**: Implement a trie and basic operations (insert, search).
+  - **Problems**: Implement a trie to check the existence of a word in a dictionary.
+
+- **Day 58 (Oct 31, Thu)**:
+  - **Study**: Advanced tree traversal problems.
+  - **Practice**: Implement a function to find the lowest common ancestor (LCA) in a binary tree.
+  - **Problems**: Find the LCA of two nodes in a binary tree.
+
+- **Day 59 (Nov 1, Fri)**:
+  - **Study**: Introduction to red-black trees.
+  - **Practice**: Implement basic red-black tree operations.
+  - **Problems**: Insert elements into a red-black tree and observe balancing.
+
+- **Day 60 (Nov 2, Sat)**:
+  - **Study**: Revision and practice of all tree-related topics.
+  - **Practice**: Solve complex tree-based problems.
+  - **Problems**: Convert a binary tree to its mirror image.
+
+### **Phase 3: Advanced DSA Topics (Days 61-90)**
+
+#### **Week 11: Graphs Basics**
+
+- **Day 61 (Nov 3, Sun)**:
+  - **Study**: Introduction to graphs and their representations (adjacency matrix/list).
+  - **Practice**: Implement a graph using an adjacency list.
+  - **Problems**: Perform a BFS on a graph.
+
+- **Day 62 (Nov 4, Mon)**:
+  - **Study**: Depth-first search (DFS) in graphs.
+  - **Practice**: Implement DFS for graph traversal.
+  - **Problems**: Detect a cycle in an undirected graph using DFS.
+
+- **Day 63 (Nov 6, Wed)**:
+  - **Study**: Understanding graph connectivity and components.
+  - **Practice**: Implement algorithms to find connected components.
+  - **Problems**: Find all connected components in a graph.
+
+- **Day 64 (Nov 7, Thu)**:
+  - **Study**: Introduction to shortest path algorithms (Dijkstra's).
+  - **Practice**: Implement Dijkstra's algorithm.
+  - **Problems**: Find the shortest path in a weighted graph.
+
+- **Day 65 (Nov 8, Fri)**:
+  - **Study**: Understanding and implementing topological sorting.
+  - **Practice**: Implement topological sorting using DFS.
+  - **Problems**: Perform topological sorting on a directed acyclic graph (DAG).
+
+- **Day 66 (Nov 9, Sat)**:
+  - **Study**: Advanced graph algorithms (Kruskal's and Prim's).
+  - **Practice**: Implement Kruskal's algorithm for finding the minimum spanning tree (MST).
+  - **Problems**: Find the MST of a graph using Kruskal's algorithm.
+
+- **Day 67 (Nov 10, Sun)**:
+  - **Study**: Revision and practice of graph algorithms.
+  - **Practice**: Solve complex graph problems.
+  - **Problems**: Implement Floyd-Warshall algorithm for all-pairs shortest path.
+
+#### **Week 12: Dynamic Programming Introduction**
+
+- **Day 68 (Nov 11, Mon)**:
+  - **Study**: Introduction to dynamic programming (DP) and memoization.
+  - **Practice**: Solve the Fibonacci problem using DP.
+  - **Problems**: Implement Fibonacci with dynamic programming.
+
+- **Day 69 (Nov 13, Wed)**:
+  - **Study**: DP with basic problems (knapsack
+
+Let's continue from Day 69: 
+
+### **Phase 3: Advanced DSA Topics (Continued)**
+
+#### **Week 12: Dynamic Programming Introduction (Continued)**
+
+- **Day 69 (Nov 13, Wed)**:
+  - **Study**: Dynamic Programming (DP) with basic problems like the Knapsack problem.
+  - **Practice**: Implement the 0/1 Knapsack problem using DP.
+  - **Problems**: Solve the 0/1 Knapsack problem for given weights and values.
+
+- **Day 70 (Nov 14, Thu)**:
+  - **Study**: Understanding DP on subsequences (Longest Common Subsequence).
+  - **Practice**: Implement the Longest Common Subsequence (LCS) problem.
+  - **Problems**: Find the LCS of two given strings.
+
+- **Day 71 (Nov 15, Fri)**:
+  - **Study**: Introduction to DP on grids (minimum path sum).
+  - **Practice**: Implement the Minimum Path Sum problem using DP.
+  - **Problems**: Find the minimum path sum in a grid from top-left to bottom-right.
+
+- **Day 72 (Nov 16, Sat)**:
+  - **Study**: More on DP with sequences (Longest Increasing Subsequence).
+  - **Practice**: Implement the Longest Increasing Subsequence (LIS) problem.
+  - **Problems**: Find the LIS in a given array.
+
+- **Day 73 (Nov 17, Sun)**:
+  - **Study**: Understanding and solving the Coin Change problem using DP.
+  - **Practice**: Implement the Coin Change problem with minimum coins.
+  - **Problems**: Solve the Coin Change problem with a given set of coins.
+
+#### **Week 13: Advanced Dynamic Programming**
+
+- **Day 74 (Nov 18, Mon)**:
+  - **Study**: Advanced DP problems (Edit Distance).
+  - **Practice**: Implement the Edit Distance problem using DP.
+  - **Problems**: Calculate the minimum edit distance between two strings.
+
+- **Day 75 (Nov 20, Wed)**:
+  - **Study**: DP with bit manipulation (Subset Sum problem).
+  - **Practice**: Implement the Subset Sum problem using DP.
+  - **Problems**: Find if there's a subset with a given sum in an array.
+
+- **Day 76 (Nov 21, Thu)**:
+  - **Study**: Understanding and solving the Rod Cutting problem using DP.
+  - **Practice**: Implement the Rod Cutting problem with DP.
+  - **Problems**: Solve the Rod Cutting problem for maximum profit.
+
+- **Day 77 (Nov 22, Fri)**:
+  - **Study**: DP with state space reduction (House Robber problem).
+  - **Practice**: Implement the House Robber problem using DP.
+  - **Problems**: Maximize the amount robbed without robbing adjacent houses.
+
+- **Day 78 (Nov 23, Sat)**:
+  - **Study**: Introduction to DP on trees.
+  - **Practice**: Solve tree DP problems like finding the diameter or maximum path sum.
+  - **Problems**: Find the maximum path sum in a binary tree.
+
+- **Day 79 (Nov 24, Sun)**:
+  - **Study**: Revision of DP concepts and problem-solving techniques.
+  - **Practice**: Re-solve DP problems from earlier weeks.
+  - **Problems**: Solve the "Burst Balloons" problem using DP.
+
+#### **Week 14: Backtracking and Greedy Algorithms**
+
+- **Day 80 (Nov 25, Mon)**:
+  - **Study**: Introduction to backtracking and basic problems like N-Queens.
+  - **Practice**: Implement the N-Queens problem using backtracking.
+  - **Problems**: Place N queens on an N×N chessboard such that no two queens attack each other.
+
+- **Day 81 (Nov 27, Wed)**:
+  - **Study**: Backtracking with combinatorial problems (Permutations).
+  - **Practice**: Generate all permutations of a given list.
+  - **Problems**: Implement a function to generate all permutations of a list of numbers.
+
+- **Day 82 (Nov 28, Thu)**:
+  - **Study**: Introduction to Greedy algorithms and problems like Activity Selection.
+  - **Practice**: Implement the Activity Selection problem using a Greedy approach.
+  - **Problems**: Select the maximum number of activities that don't overlap.
+
+- **Day 83 (Nov 29, Fri)**:
+  - **Study**: More Greedy problems (Huffman Coding).
+  - **Practice**: Implement Huffman Coding to minimize data transmission.
+  - **Problems**: Build a Huffman Tree for given character frequencies.
+
+- **Day 84 (Nov 30, Sat)**:
+  - **Study**: Advanced backtracking problems (Sudoku Solver).
+  - **Practice**: Implement a Sudoku solver using backtracking.
+  - **Problems**: Solve a given Sudoku puzzle using backtracking.
+
+- **Day 85 (Dec 1, Sun)**:
+  - **Study**: Revision of backtracking and greedy techniques.
+  - **Practice**: Re-solve problems related to these topics.
+  - **Problems**: Solve the "Minimum Number of Platforms" problem using a greedy approach.
+
+### **Phase 4: Competitive Programming and Advanced Problem Solving (Days 91-100)**
+
+#### **Week 15: Problem Solving Strategies**
+
+- **Day 86 (Dec 2, Mon)**:
+  - **Study**: Strategies for solving competitive programming problems.
+  - **Practice**: Attempt problems involving multiple topics (DP, graphs, etc.).
+  - **Problems**: Solve the "Traveling Salesman Problem" using backtracking.
+
+- **Day 87 (Dec 4, Wed)**:
+  - **Study**: Advanced problem-solving strategies for complex problems.
+  - **Practice**: Attempt problems from previous competitive programming contests.
+  - **Problems**: Solve problems from Codeforces or LeetCode contests.
+
+- **Day 88 (Dec 5, Thu)**:
+  - **Study**: Techniques for optimizing algorithms and reducing time complexity.
+  - **Practice**: Optimize previously solved problems for better performance.
+  - **Problems**: Optimize your solution for the "Longest Common Subsequence" problem.
+
+- **Day 89 (Dec 6, Fri)**:
+  - **Study**: Review and solve problems on advanced data structures (Fenwick Tree, Segment Tree).
+  - **Practice**: Implement a Fenwick Tree (Binary Indexed Tree).
+  - **Problems**: Solve range query problems using a Fenwick Tree.
+
+- **Day 90 (Dec 7, Sat)**:
+  - **Study**: Final review of all DSA topics covered.
+  - **Practice**: Solve mixed problems covering various DSA topics.
+  - **Problems**: Solve the "Maximum Flow" problem using the Ford-Fulkerson method.
+
+- **Day 91 (Dec 8, Sun)**:
+  - **Study**: Mock contests and timed problem-solving.
+  - **Practice**: Participate in a 3-hour mock coding contest.
+  - **Problems**: Attempt a set of problems under timed conditions.
+
+#### **Week 16: Final Wrap-Up**
+
+- **Day 92 (Dec 9, Mon)**:
+  - **Study**: Review and practice problems you struggled with during the 100 days.
+  - **Practice**: Re-solve the hardest problems you encountered.
+  - **Problems**: Revisit and solve the "N-Queens" and "Knapsack" problems.
+
+- **Day 93 (Dec 11, Wed)**:
+  - **Study**: Practice competitive programming with harder problems.
+  - **Practice**: Attempt problems from higher-rated contests on Codeforces.
+  - **Problems**: Solve problems rated 1600+ on Codeforces.
+
+- **Day 94 (Dec 12, Thu)**:
+  - **Study**: Final review of dynamic programming and backtracking techniques.
+  - **Practice**: Solve mixed DP and backtracking problems.
+  - **Problems**: Solve a complex problem combining DP and backtracking.
+
+- **Day 95 (Dec 13, Fri)**:
+  - **Study**: Practice with problems from previous ACM-ICPC or Google Kickstart contests.
+  - **Practice**: Work on problems that involve multiple algorithms and data structures.
+  - **Problems**: Solve a complex multi-part problem from a past contest.
+
+- **Day 96 (Dec 14, Sat)**:
+  - **Study**: Review graph algorithms and their applications.
+  - **Practice**: Solve problems involving graphs, including those related to social networks.
+  - **Problems**: Implement and solve the "Friend Circles" problem.
+
+- **Day 97 (Dec 15, Sun)**:
+  - **Study**: Final practice on miscellaneous topics (strings, combinatorics, etc.).
+  - **Practice**: Solve problems involving string matching algorithms like KMP.
+  - **Problems**: Implement and solve the "String Matching" problem.
+
+- **Day 98 (Dec 16, Mon)**:
+  - **Study**: Final day of revision and practice.
+  - **Practice**: Solve a mixed set of problems across all topics.
+  - **Problems**: Attempt to solve 5-6 random problems from your favorite platform.
+
+- **Day 99 (Dec 18, Wed)**:
+  - **Study**: Rest day before the final contest.
+  - **Practice**: Light practice or review notes on challenging topics.
+  - **Problems**: Skim through previously solved problems.
+
+Let's complete the plan with Day 100: 
+
+### **Day 100 (Dec 19, Thu)**:
+- **Study**: **Final Day - Comprehensive Assessment**
+  - **Practice**: Participate in a full-length mock contest or real-time coding competition. This will simulate an actual coding interview or competitive programming contest. Choose a platform like Codeforces, LeetCode, or HackerRank for the contest.
+  - **Problems**: Tackle a set of 5-6 problems with varying difficulty levels, including one easy, two medium, and two hard problems. Focus on optimizing your approach and ensuring correctness.
+  - **Review**: After the contest, carefully analyze your performance. Review the problems you solved, noting where you could have improved in terms of efficiency and approach. Go over any problems you couldn't solve and understand the correct solutions.
+  - **Reflection**: Reflect on your journey over the past 100 days. Identify your strengths and areas where you can continue to improve. Celebrate your progress and set goals for ongoing learning and problem-solving beyond this 100-day plan.
