@@ -1,11 +1,19 @@
 receivers:
   otlp:
     protocols:
-      http:
-        endpoint: 0.0.0.0:4317
+      grpc:
+        endpoint: "0.0.0.0:4317"
         tls:
           cert_file: "C:\\path\\to\\cert.pem"
           key_file: "C:\\path\\to\\key.pem"
+      http:
+        endpoint: "0.0.0.0:4318"
+        tls:
+          cert_file: "C:\\path\\to\\cert.pem"
+          key_file: "C:\\path\\to\\key.pem"
+
+processors:
+  batch:
 
 exporters:
   logging:
@@ -15,10 +23,16 @@ extensions:
   health_check:
   pprof:
   zpages:
+  jaeger_storage:
+    backends:
+      default:
+        memory:
+          max_traces: 100000
 
 service:
   extensions: [health_check, pprof, zpages]
   pipelines:
     traces:
       receivers: [otlp]
+      processors: [batch]
       exporters: [logging]
