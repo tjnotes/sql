@@ -15,16 +15,16 @@ exporters:
     verbosity: normal
 
 extensions:
-  pprof: {}        # Valid in Jaeger 2.8
-  zpages: {}       # Valid in Jaeger 2.8
+  pprof: {}        # Valid: enables profiling endpoints
+  zpages: {}       # Valid: enables debug pages
   jaeger_storage:
     backends:
-      memory_storage:
+      memory_backend:
         memory:
           max_traces: 100000
   jaeger_query:
     storage:
-      traces: memory_storage
+      traces: memory_backend
     base_path: /
     http:
       endpoint: "0.0.0.0:16686"
