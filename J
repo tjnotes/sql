@@ -1,56 +1,24 @@
-gPerfect! Now I can see your exact setup. You're using NSSM to run Jaeger as a Windows service.
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:4317
+        tls:
+          cert_file: "C:\\path\\to\\cert.pem"
+          key_file: "C:\\path\\to\\key.pem"
 
-# Configure Jaeger Service with TLS
+exporters:
+  logging:
+    loglevel: debug
 
-## Step 1: Generate SSL Certificate (as before)
-```powershell
-# Run as Administrator
-$cert = New-SelfSignedCertificate -DnsName "localhost", "127.0.0.1" -CertStoreLocation "cert:\LocalMachine\My" -NotAfter (Get-Date).AddYears(5)
+extensions:
+  health_check:
+  pprof:
+  zpages:
 
-$certPath = "C:\Jaeger\certs"
-New-Item -ItemType Directory -Path $certPath -Force
-
-Export-Certificate -Cert $cert -FilePath "$certPath\cert.crt"
-$password = ConvertTo-SecureString -String "jaeger123" -Force -AsPlainText
-Export-PfxCertificate -Cert $cert -FilePath "$certPath\cert.pfx" -Password $password
-```
-
-## Step 2: Convert to PEM (using OpenSSL)
-```bash
-cd C:\Jaeger\certs
-openssl x509 -inform DER -in cert.crt -out cert.pem
-openssl pkcs12 -in cert.pfx -nocerts -out key.pem -nodes
-```
-
-## Step 3: Update NSSM Service Configuration
-
-**Stop the service:**
-```cmd
-nssm stop Jaeger
-```
-
-**Add TLS parameters to the service:**
-```cmd
-nssm set Jaeger AppParameters "--collector.otlp.grpc.tls.enabled=true --collector.otlp.grpc.tls.cert=C:\Jaeger\certs\cert.pem --collector.otlp.grpc.tls.key=C:\Jaeger\certs\key.pem"
-```
-
-**Start the service:**
-```cmd
-nssm start Jaeger
-```
-
-## Step 4: Update Your App Config
-```
-Telemetry: 
-  servicename: ap 
-  otlpendpoint: https://127.0.0.1:4317
-```
-
-## Step 5: Check Service Status
-```cmd
-nssm status Jaeger
-```
-
-**Check logs:** `C:\Jaeger\jaeger.out.log` and `C:\Jaeger\jaeger.err.log`
-
-Want to try this approach?
+service:
+  extensions: [health_check, pprof, zpages]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [logging]
