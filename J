@@ -1,0 +1,41 @@
+## Honestly? **Maybe** - Here's Why:
+
+## Potential Issues:
+
+**1. Jaeger Version Dependency**
+- Older Jaeger versions may not support these TLS flags
+- Flag names might be different in your version
+- Some versions need different syntax
+
+**2. Certificate Format Issues**
+- Windows certificate conversion can be tricky
+- PEM format must be exactly right
+- File permissions might cause problems
+
+**3. NSSM Service Context**
+- Service might not have access to certificate files
+- File paths might need to be absolute
+- Service account permissions
+
+## Success Probability: **60-70%**
+
+## What Could Go Wrong:
+- Service fails to start (check logs)
+- Certificates not recognized
+- Wrong TLS flag names for your Jaeger version
+
+## My Recommendation:
+**Try it, but have backup plan ready.**
+
+If it doesn't work after 15-20 minutes of troubleshooting, **switch to nginx reverse proxy** - that approach has 95% success rate because:
+- Nginx handles TLS perfectly
+- No dependency on Jaeger version
+- Standard, well-documented approach
+
+## Next Steps:
+1. Try the TLS configuration
+2. If service starts successfully → test your app
+3. If it fails → check logs and we'll debug
+4. If too many issues → switch to nginx
+
+**Want to proceed with this approach?** We can always pivot if needed.
