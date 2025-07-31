@@ -15,20 +15,22 @@ exporters:
     verbosity: normal
 
 extensions:
-  health_check: {}         # Valid extension
-  pprof: {}                # Valid extension
-  zpages: {}               # Valid extension
-  jaeger_storage:         # Required for storage
+  pprof: {}        # Valid profiling extension
+  zpages: {}       # Valid debugging zPages
+  jaeger_storage: # Configures in-memory trace storage
     backends:
       in_memory:
         memory:
           max_traces: 100000
-  jaeger_query:            # Required to expose UI and query API
+  jaeger_query:   # Enables Jaeger UI and query API
     storage:
       traces: in_memory
+    base_path: /
+    http:
+      endpoint: "0.0.0.0:16686"
 
 service:
-  extensions: [health_check, pprof, zpages, jaeger_query]
+  extensions: [pprof, zpages, jaeger_query]
   pipelines:
     traces:
       receivers: [otlp]
