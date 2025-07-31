@@ -1,41 +1,56 @@
-## Honestly? **Maybe** - Here's Why:
+gPerfect! Now I can see your exact setup. You're using NSSM to run Jaeger as a Windows service.
 
-## Potential Issues:
+# Configure Jaeger Service with TLS
 
-**1. Jaeger Version Dependency**
-- Older Jaeger versions may not support these TLS flags
-- Flag names might be different in your version
-- Some versions need different syntax
+## Step 1: Generate SSL Certificate (as before)
+```powershell
+# Run as Administrator
+$cert = New-SelfSignedCertificate -DnsName "localhost", "127.0.0.1" -CertStoreLocation "cert:\LocalMachine\My" -NotAfter (Get-Date).AddYears(5)
 
-**2. Certificate Format Issues**
-- Windows certificate conversion can be tricky
-- PEM format must be exactly right
-- File permissions might cause problems
+$certPath = "C:\Jaeger\certs"
+New-Item -ItemType Directory -Path $certPath -Force
 
-**3. NSSM Service Context**
-- Service might not have access to certificate files
-- File paths might need to be absolute
-- Service account permissions
+Export-Certificate -Cert $cert -FilePath "$certPath\cert.crt"
+$password = ConvertTo-SecureString -String "jaeger123" -Force -AsPlainText
+Export-PfxCertificate -Cert $cert -FilePath "$certPath\cert.pfx" -Password $password
+```
 
-## Success Probability: **60-70%**
+## Step 2: Convert to PEM (using OpenSSL)
+```bash
+cd C:\Jaeger\certs
+openssl x509 -inform DER -in cert.crt -out cert.pem
+openssl pkcs12 -in cert.pfx -nocerts -out key.pem -nodes
+```
 
-## What Could Go Wrong:
-- Service fails to start (check logs)
-- Certificates not recognized
-- Wrong TLS flag names for your Jaeger version
+## Step 3: Update NSSM Service Configuration
 
-## My Recommendation:
-**Try it, but have backup plan ready.**
+**Stop the service:**
+```cmd
+nssm stop Jaeger
+```
 
-If it doesn't work after 15-20 minutes of troubleshooting, **switch to nginx reverse proxy** - that approach has 95% success rate because:
-- Nginx handles TLS perfectly
-- No dependency on Jaeger version
-- Standard, well-documented approach
+**Add TLS parameters to the service:**
+```cmd
+nssm set Jaeger AppParameters "--collector.otlp.grpc.tls.enabled=true --collector.otlp.grpc.tls.cert=C:\Jaeger\certs\cert.pem --collector.otlp.grpc.tls.key=C:\Jaeger\certs\key.pem"
+```
 
-## Next Steps:
-1. Try the TLS configuration
-2. If service starts successfully → test your app
-3. If it fails → check logs and we'll debug
-4. If too many issues → switch to nginx
+**Start the service:**
+```cmd
+nssm start Jaeger
+```
 
-**Want to proceed with this approach?** We can always pivot if needed.
+## Step 4: Update Your App Config
+```
+Telemetry: 
+  servicename: ap 
+  otlpendpoint: https://127.0.0.1:4317
+```
+
+## Step 5: Check Service Status
+```cmd
+nssm status Jaeger
+```
+
+**Check logs:** `C:\Jaeger\jaeger.out.log` and `C:\Jaeger\jaeger.err.log`
+
+Want to try this approach?
