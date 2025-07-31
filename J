@@ -1,4 +1,4 @@
- receivers:
+receivers:
   otlp:
     protocols:
       grpc:
@@ -15,17 +15,20 @@ exporters:
     verbosity: normal
 
 extensions:
-  health_check:
-  pprof:
-  zpages:
-  jaeger_storage:
+  health_check: {}         # Valid extension
+  pprof: {}                # Valid extension
+  zpages: {}               # Valid extension
+  jaeger_storage:         # Required for storage
     backends:
-      default:
+      in_memory:
         memory:
           max_traces: 100000
+  jaeger_query:            # Required to expose UI and query API
+    storage:
+      traces: in_memory
 
 service:
-  extensions: [health_check, pprof, zpages]
+  extensions: [health_check, pprof, zpages, jaeger_query]
   pipelines:
     traces:
       receivers: [otlp]
