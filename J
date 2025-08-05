@@ -1,9 +1,3 @@
-telemetry:
-  apservicename: ap
-  otlpenpoint: 'https://127.0.0.1:4318'
-  headers: {}
-  tls:
-    cert_file: 'E:\Jaeger\certs\cert.pem'
-    key_file: 'E:\Jaeger\certs\key.pem'
-    ca_file: 'E:\Jaeger\certs\cert.pem'  # Use same cert as CA for self-signed
-    insecure_skip_verify: false
+set OTEL_EXPORTER_OTLP_CERTIFICATE=E:\Jaeger\certs\cert.pem
+set OTEL_EXPORTER_OTLP_CLIENT_KEY=E:\Jaeger\certs\key.pem
+set OTEL_EXPORTER_OTLP_CLIENT_CERTIFICATE=E:\Jaeger\certs\cert.pem
