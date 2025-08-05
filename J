@@ -1,5 +1,12 @@
-curl -X POST https://127.0.0.1:4318/v1/traces \
-  --cert cert.pem \
-  --key key.pem \
-  -H "Content-Type: application/json" \
-  -d @trace.json
+Step 1: Convert Jaeger's PEM certificates to JKS format# Convert PEM to PKCS12 first
+openssl pkcs12 -export -in "E:\Jaeger\certs\cert.pem" -inkey "E:\Jaeger\certs\key.pem" -out "E:\Jaeger\certs\jaeger.p12" -name jaeger-cert -password pass:jaeger123
+
+# Convert PKCS12 to JKS
+keytool -importkeystore -srckeystore "E:\Jaeger\certs\jaeger.p12" -srcstoretype PKCS12 -destkeystore "E:\Jaeger\certs\jaeger.jks" -deststoretype JKS -srcstorepass jaeger123 -deststorepass jaeger123Step 2: Update your server.xml to use Jaeger's certificatesReplace one of your existing SSL connector configurations with:<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+           maxThreads="1500" maxConnections="20000" acceptCount="1000" SSLEnabled="true">
+    <SSLHostConfig hostName="localhost" certificateVerification="required" revocationEnabled="true" truststoreFile="E:\Jaeger\certs\jaeger.jks" truststorePassword="jaeger123">
+        <Certificate certificateKeystoreFile="E:\Jaeger\certs\jaeger.jks" 
+                     certificateKeystorePassword="jaeger123"
+                     certificateKeyAlias="jaeger-cert"
+                     type="RSA" />
+    </SSLHostConfig
