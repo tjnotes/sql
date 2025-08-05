@@ -1,3 +1,7 @@
 set OTEL_EXPORTER_OTLP_CERTIFICATE=E:\Jaeger\certs\cert.pem
 set OTEL_EXPORTER_OTLP_CLIENT_KEY=E:\Jaeger\certs\key.pem
 set OTEL_EXPORTER_OTLP_CLIENT_CERTIFICATE=E:\Jaeger\certs\cert.pem
+
+set OTEL_EXPORTER_OTLP_TRACES_CERTIFICATE=E:\Jaeger\certs\cert.pem
+set OTEL_EXPORTER_OTLP_TRACES_CLIENT_KEY=E:\Jaeger\certs\key.pem
+set OTEL_EXPORTER_OTLP_TRACES_CLIENT_CERTIFICATE=E:\Jaeger\certs\cert.pem
