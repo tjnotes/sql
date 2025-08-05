@@ -1,38 +1,4 @@
-receivers:
-  otlp:
-    protocols:
-      grpc:
-        endpoint: "0.0.0.0:4317"
-        tls:
-          cert_file: "C:\\path\\to\\cert.pem"
-          key_file: "C:\\path\\to\\key.pem"
+openssl pkcs12 -export -in cert.pem -inkey key.pem -out jaeger-cert.p12 -name jaeger
 
-processors:
-  batch:
-
-exporters:
-  debug:
-    verbosity: normal
-
-extensions:
-  pprof: {}        # Valid: enables profiling endpoints
-  zpages: {}       # Valid: enables debug pages
-  jaeger_storage:
-    backends:
-      memory_backend:
-        memory:
-          max_traces: 100000
-  jaeger_query:
-    storage:
-      traces: memory_backend
-    base_path: /
-    http:
-      endpoint: "0.0.0.0:16686"
-
-service:
-  extensions: [pprof, zpages, jaeger_query]
-  pipelines:
-    traces:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [debug]
+# Import into Java truststore (default password is 'changeit')
+keytool -import -trustcacerts -alias jaeger-collector -file cert.pem -keystore $JAVA_HOME/jre/lib/security/cacerts
