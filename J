@@ -1,23 +1,4 @@
-keytool -export -rfc -keystore tls_portal.jks -alias te-4545a20c-cb2a-4f78-98f2-22ca200891a4 -file tomcat_cert.pem
-
-keytool -import -trustcacerts -file tomcat_cert.pem -keystore jaeger_truststore.jks -alias tomcat_cert
-
-receivers:
-  otlp:
-    protocols:
-      grpc:
-        endpoint: "0.0.0.0:4317"
-        tls:
-          cert_file: "E:\Jaeger\certs\cert.pem"
-          key_file: "E:\Jaeger\certs\key.pem"
-          # Add this line
-          client_ca_file: "E:\Jaeger\certs\tomcat_cert.pem"
-      http:
-        endpoint: "0.0.0.0:4318"
-        tls:
-          cert_file: "E:\Jaeger\certs\cert.pem"
-          key_file: "E:\Jaeger\certs\key.pem"
-          # Add this line
-          client_ca_file: "E:\Jaeger\certs\tomcat_cert.pem"
-
-java -Djavax.net.ssl.trustStore=E:\Jaeger\certs\jaeger_truststore.jks -jar jaeger-all-in-one.jar --config-file=your_config.yaml
+-Dotel.javaagent.debug=true
+-Dotel.exporter.otlp.traces.endpoint=https://p01.test.re.i:4318/v1/traces
+-Dotel.resource.attributes=service.name=AP
+-Dotel.traces.exporter=otlp
