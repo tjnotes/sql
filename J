@@ -1,4 +1,65 @@
-set "JAVA_OPTS=%JAVA_OPTS% -Dotel.javaagent.debug=true"
-set "JAVA_OPTS=%JAVA_OPTS% -Dotel.exporter.otlp.traces.endpoint=https://01.test.were.i:4318/v1/traces"
-set "JAVA_OPTS=%JAVA_OPTS% -Dotel.resource.attributes=service.name=AP"
-set "JAVA_OPTS=%JAVA_OPTS% -Dotel.traces.exporter=otlp"
+# Windows PowerShell version
+$currentTimeNano = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds() * 1000000000
+$endTimeNano = ($currentTimeNano + 1000000000)
+
+curl.exe -v `
+  --cacert "E:\Jaeger\certs\New\trust\cert.crt" `
+  -X POST `
+  -H "Content-Type: application/json" `
+  https://01.test.ware.i:4318/v1/traces `
+  -d "{
+    `"resourceSpans`": [
+      {
+        `"resource`": {
+          `"attributes`": [
+            {
+              `"key`": `"service.name`",
+              `"value`": {
+                `"stringValue`": `"test-service`"
+              }
+            },
+            {
+              `"key`": `"service.version`",
+              `"value`": {
+                `"stringValue`": `"1.0.0`"
+              }
+            }
+          ]
+        },
+        `"instrumentationLibrarySpans`": [
+          {
+            `"instrumentationLibrary`": {
+              `"name`": `"manual-test`"
+            },
+            `"spans`": [
+              {
+                `"traceId`": `"7bba9f33312b3dbb8b2c2c62bb7abe2d`",
+                `"spanId`": `"086e83747d0e381e`",
+                `"name`": `"test-span`",
+                `"kind`": 1,
+                `"startTimeUnixNano`": `"$currentTimeNano`",
+                `"endTimeUnixNano`": `"$endTimeNano`",
+                `"attributes`": [
+                  {
+                    `"key`": `"http.method`",
+                    `"value`": {
+                      `"stringValue`": `"GET`"
+                    }
+                  },
+                  {
+                    `"key`": `"http.url`",
+                    `"value`": {
+                      `"stringValue`": `"https://example.com/test`"
+                    }
+                  }
+                ],
+                `"status`": {
+                  `"code`": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }"
