@@ -1,6 +1,23 @@
-# Create PKCS12 keystore with the same certificate Jaeger expects
-openssl pkcs12 -export -in "E:\Jaeger\certs\cert.pem" -inkey "E:\Jaeger\certs\key.pem" -out "E:\Jaeger\certs\tomcat-client.p12" -name "tomcat-client" -password pass:jaeger123Then create a setenv.bat file in Tomcat's bin directory:set JAVA_OPTS=%JAVA_OPTS% -Djavax.net.ssl.keyStore=E:\Jaeger\certs\tomcat-client.p12
-set JAVA_OPTS=%JAVA_OPTS% -Djavax.net.ssl.keyStorePassword=jaeger123
-set JAVA_OPTS=%JAVA_OPTS% -Djavax.net.ssl.keyStoreType=PKCS12
-set JAVA_OPTS=%JAVA_OPTS% -Djavax.net.ssl.trustStore=E:\Jaeger\certs\tomcat-client.p12
-set JAVA_OPTS=%JAVA_OPTS% -Djavax.net.ssl.trustStorePassword=jaeger123
+keytool -export -rfc -keystore tls_portal.jks -alias te-4545a20c-cb2a-4f78-98f2-22ca200891a4 -file tomcat_cert.pem
+
+keytool -import -trustcacerts -file tomcat_cert.pem -keystore jaeger_truststore.jks -alias tomcat_cert
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: "0.0.0.0:4317"
+        tls:
+          cert_file: "E:\Jaeger\certs\cert.pem"
+          key_file: "E:\Jaeger\certs\key.pem"
+          # Add this line
+          client_ca_file: "E:\Jaeger\certs\tomcat_cert.pem"
+      http:
+        endpoint: "0.0.0.0:4318"
+        tls:
+          cert_file: "E:\Jaeger\certs\cert.pem"
+          key_file: "E:\Jaeger\certs\key.pem"
+          # Add this line
+          client_ca_file: "E:\Jaeger\certs\tomcat_cert.pem"
+
+java -Djavax.net.ssl.trustStore=E:\Jaeger\certs\jaeger_truststore.jks -jar jaeger-all-in-one.jar --config-file=your_config.yaml
