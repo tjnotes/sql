@@ -1,4 +1,4 @@
--Dotel.javaagent.debug=true
--Dotel.exporter.otlp.traces.endpoint=https://p01.test.re.i:4318/v1/traces
--Dotel.resource.attributes=service.name=AP
--Dotel.traces.exporter=otlp
+set "JAVA_OPTS=%JAVA_OPTS% -Dotel.javaagent.debug=true"
+set "JAVA_OPTS=%JAVA_OPTS% -Dotel.exporter.otlp.traces.endpoint=https://01.test.were.i:4318/v1/traces"
+set "JAVA_OPTS=%JAVA_OPTS% -Dotel.resource.attributes=service.name=AP"
+set "JAVA_OPTS=%JAVA_OPTS% -Dotel.traces.exporter=otlp"
